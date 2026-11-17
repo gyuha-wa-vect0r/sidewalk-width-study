@@ -1,0 +1,11 @@
+{
+  "replay": "seoul_v1_replay",
+  "byte_identical": {
+    "folds.csv": true,
+    "prepared_hashes.csv": true,
+    "dino_predictions.csv": true,
+    "resnet_predictions.csv": true,
+    "metrics.json": true
+  },
+  "csv_recomputed_mae_and_1.5m_misses": true
+}

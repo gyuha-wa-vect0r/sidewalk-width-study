@@ -1,0 +1,21 @@
+{
+  "version": "seoul_v1",
+  "analysis_role": "exploratory_replay_and_extension",
+  "frozen_kst": "2026-11-11",
+  "dataset_record": "10.5281/zenodo.22908353",
+  "models": ["dino", "resnet"],
+  "ridge_alpha": 1.0,
+  "primary_contrast": ["geometry_pavement", "geometry_both"],
+  "secondary_contrasts": {
+    "pavement_given_geometry": ["geometry", "geometry_pavement"],
+    "context_given_geometry": ["geometry", "geometry_context"],
+    "pavement_given_context": ["geometry_context", "geometry_both"]
+  },
+  "folds": "Leave one of the four GPS-derived 200m connected components out of model fit. Use 100m spatial blocks for intervals. Earlier 136 pilot photos may train within the three training sites but are excluded from scored results. Exclude empty masks across arms before fitting and scoring.",
+  "narrow_thresholds_m": [1.5, 2.0],
+  "review_fraction": 0.2,
+  "review_priority": "Smallest predicted width first, per site. Budget ceil(0.20 * eligible site count). Break ties by filename. Compare with per-site random expected counts. Actual widths only score selected cases.",
+  "baseline_only_comparators": ["raw_rgb", "row_widths", "area_only", "train_mean"],
+  "eligibility": "Both feature caches exist and photo is eligible with nonempty mask. Test evaluated in every arm uses the same photo IDs.",
+  "scope": "This is a previously explored Seoul dataset. No independent confirmation is claimed."
+}
